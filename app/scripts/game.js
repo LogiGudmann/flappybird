@@ -55,9 +55,17 @@ window.Game = (function() {
 	 * Resets the state of the game so a new game can be started.
 	 */
 	Game.prototype.reset = function() {
+		var Menu = this.el.find('.Menu');
+		Menu
+			.addClass('is-visible')
+			.one('click',function(){
+				Menu.removeClass('is-visible');
+				that.start();
+			});
 		this.player.reset();
 		this.groundMoney.removeClass('stopGround');
-
+		this.GAMEOVER = true;
+		this.STARTINGNEWGAME = true;
 	};
 
 	/**
@@ -66,6 +74,7 @@ window.Game = (function() {
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
 		this.groundMoney.addClass('stopGround');
+		this.GAMEOVER = false;
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
