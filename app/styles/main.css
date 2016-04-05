@@ -63,5 +63,6 @@ height: 57.6em;
 margin-left: -51.2em;
 margin-top: -28.8em;
 overflow: hidden;
-background: red;
+background: url("Background.jpg");
+background-size: 100%;
 }
