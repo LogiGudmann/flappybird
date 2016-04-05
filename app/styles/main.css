@@ -63,6 +63,6 @@ height: 57.6em;
 margin-left: -51.2em;
 margin-top: -28.8em;
 overflow: hidden;
-background: url("Background.jpg");
-background-size: 105%;
+background-image: url("../img/Althingi.jpg");
+background-size: 100%;
 }
