@@ -89,3 +89,21 @@ background-size: 100%;
 .stopGround {
   animation: none; 
 }
+
+.mossackFonseca {
+  position: absolute;
+  height: 20em;
+  width: 20em;
+  background-image: url("/../img/blocks.png"); 
+  background-repeat: no-repeat;
+  background-size: contain; 
+}
+
+.mfTop{
+	top:0;
+	left:400px;
+}
+.mfBot{
+	bottom: 20px;
+	left:400px;
+}
