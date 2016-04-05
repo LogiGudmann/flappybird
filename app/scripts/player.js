@@ -10,6 +10,7 @@ window.Player = (function() {
 	var HEIGHT = 5;
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
+	var GAMEOVER = true;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -23,22 +24,21 @@ window.Player = (function() {
 	Player.prototype.reset = function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
+		GAMEOVER = true;
 	};
 
 	Player.prototype.onFrame = function(delta) {
-		if (Controls.keys.right) {
-			this.pos.x += delta * SPEED;
-		}
-		if (Controls.keys.left) {
-			this.pos.x -= delta * SPEED;
-		}
-		if (Controls.keys.down) {
-			this.pos.y += delta * SPEED;
-		}
-		if (Controls.keys.up) {
-			this.pos.y -= delta * SPEED;
-		}
 
+		if (Controls.keys.space) {
+			SPEED = 40;
+			this.pos.y -= delta *SPEED;
+			GAMEOVER = false;
+		}
+		else if(GAMEOVER == false)
+		{
+			SPEED -= 3;
+			this.pos.y -= delta * SPEED;
+	  }
 		this.checkCollisionWithBounds();
 		// Update UI
 		this.el.css('transform', ' translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
@@ -49,6 +49,7 @@ window.Player = (function() {
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+			GAMEOVER = true;
 			return this.game.gameover();
 		}
 	};
