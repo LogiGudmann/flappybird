@@ -56,11 +56,13 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		var Menu = this.el.find('.Menu');
+		//Only works on clicking on that said element
+		//Need to fix to put for whole game
 		Menu
 			.addClass('is-visible')
 			.one('click',function(){
 				Menu.removeClass('is-visible');
-				that.start();
+				this.start();
 			});
 		this.player.reset();
 		this.groundMoney.removeClass('stopGround');
