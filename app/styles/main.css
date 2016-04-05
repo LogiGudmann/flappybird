@@ -118,3 +118,26 @@ overflow: hidden;
 background-image: url("../img/Althingi.jpg");
 background-size: 100%;
 }
+
+@keyframes groundAnimation {
+  0% {
+    transform: translateZ(0) translate(0em, 0em); }
+  100% {
+    transform: translateZ(0) translate(-6em, 0em); } 
+}
+
+.groundMoney {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 200%;
+  height: 2.5em;
+  background-image: url("/../img/money.png");
+  background-repeat: repeat-x;	
+  background-size: contain;
+  animation: groundAnimation 0.5s linear infinite; 
+}
+
+.stopGround {
+  animation: none; 
+}
