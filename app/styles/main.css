@@ -7,9 +7,61 @@
 	background-image: url('../img/simmi.png');
 	background-repeat: no-repeat;
 	background-size: contain;
+  /*transform: translate(9em, 9em);
+*/}
+.Player-wings {
+
+	position: absolute;
+	/*Vinstri hafa það sem mest hjá okkur*/
+	left: 0.1em;
+	/*Hæðin af vængjunum*/
+	top: 0.1em;
+	/*Lengdin af vængjunum*/
+	height: 0.8em;
+	/*Breiddin*/
+	width: 0.1em;
+
+	background: yellow;
+	transform-origin: top left;
+	animation: 0.4s flap alternate infinite;
 
 }
+@keyframes flap {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(180deg);
+  }
+}
+/*
+.Player-wings {
+  // Positioned from top left of parent.
+  position: absolute;
+	Vinstri hafa það sem mest hjá okkur
+  left: 0.25em;
+	Hæðin af vængjunum
+  top: 0.4em;
+	Lengdin af vængjunum
+  height: 0.8em;
+	Breiddin
+  width: 0.5em;
 
+
+  background: yellow;
+  transform-origin: top left;
+  animation: 0.4s flap alternate infinite;
+}
+
+@keyframes flap {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(180deg);
+  }
+}
+*/
 .Scoreboard {
 	position: absolute;
 	left: 50%;
