@@ -7,7 +7,36 @@
 	background-image: url('../img/simmi.png');
 	background-repeat: no-repeat;
 	background-size: contain;
+  transform: translate(30em, 25em);
+}
+.Player-wings {
 
+	position: absolute;
+	/*Vinstri hafa það sem mest hjá okkur*/
+	left: -2.4em;
+	/*Hæðin af vængjunum*/
+	/*top: 0.1em;*/
+	bottom:-1.9em;
+	/*Lengdin af vængjunum*/
+	height: 3.1em;
+	/*Breiddin*/
+	width: 3.1em;
+
+
+	background-image: url('../img/ing.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform-origin: top left;
+	animation: 0.3s Flappmundur alternate infinite;
+
+}
+@keyframes Flappmundur {
+  from {
+    transform: rotateX(0);
+  }
+  to {
+    transform: rotateX(180deg);
+  }
 }
 
 .Scoreboard {
@@ -71,7 +100,7 @@ background-size: 100%;
   0% {
     transform: translateZ(0) translate(0em, 0em); }
   100% {
-    transform: translateZ(0) translate(-6em, 0em); } 
+    transform: translateZ(0) translate(-6em, 0em); }
 }
 
 .groundMoney {
@@ -81,29 +110,25 @@ background-size: 100%;
   width: 200%;
   height: 2.5em;
   background-image: url("/../img/money.png");
-  background-repeat: repeat-x;	
+  background-repeat: repeat-x;
   background-size: contain;
-  animation: groundAnimation 0.5s linear infinite; 
+  animation: groundAnimation 0.5s linear infinite;
 }
 
 .stopGround {
-  animation: none; 
+  animation: none;
 }
 
-.mossackFonseca {
+.block {
   position: absolute;
   height: 20em;
   width: 20em;
-  background-image: url("/../img/blocks.png"); 
+  /*background-image: url("/../img/blocks.png"); 
   background-repeat: no-repeat;
   background-size: contain; 
-}
+*/}
 
-.mfTop{
-	top:0;
-	left:400px;
+.blockTop{
 }
-.mfBot{
-	bottom: 20px;
-	left:400px;
+.blockBot{
 }

@@ -6,8 +6,8 @@ window.Player = (function() {
 	// All these constants are in em's, multiply by 10 pixels
 	// for 1024x576px canvas.
 	var SPEED = 30; // * 10 pixels per second
-	var WIDTH = 5;
-	var HEIGHT = 5;
+	//var WIDTH = 5;
+	var HEIGHT = 7.5;
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
 	var GAMEOVER = true;
@@ -15,7 +15,7 @@ window.Player = (function() {
 	var Player = function(el, game) {
 		this.el = el;
 		this.game = game;
-		this.pos = { x: 0, y: 0 };
+		this.pos = { x: INITIAL_POSITION_X, y: INITIAL_POSITION_Y };
 	};
 
 	/**
@@ -40,7 +40,7 @@ window.Player = (function() {
 			this.pos.y -= delta *SPEED;
 			GAMEOVER = false;
 		}
-		else if(GAMEOVER == false)
+		else if(GAMEOVER === false)
 		{
 			SPEED -= 3;
 			this.pos.y -= delta * SPEED;
@@ -51,9 +51,7 @@ window.Player = (function() {
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
-		if (this.pos.x < 0 ||
-			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+		if (this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
 			GAMEOVER = true;
 			return this.game.gameover();
 		}
