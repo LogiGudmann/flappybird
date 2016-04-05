@@ -7,13 +7,13 @@
 	background-image: url('../img/simmi.png');
 	background-repeat: no-repeat;
 	background-size: contain;
-  /*transform: translate(9em, 9em);
-*/}
+  transform: translate(30em, 25em);
+}
 .Player-wings {
 
 	position: absolute;
 	/*Vinstri hafa það sem mest hjá okkur*/
-	left: -1.9em;
+	left: -2.4em;
 	/*Hæðin af vængjunum*/
 	/*top: 0.1em;*/
 	bottom:-1.9em;
@@ -23,7 +23,7 @@
 	width: 3.1em;
 
 
-	background-image: url('../img/wing.jpg');
+	background-image: url('../img/ing.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 	transform-origin: top left;
