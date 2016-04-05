@@ -7,7 +7,7 @@ window.Player = (function() {
 	// for 1024x576px canvas.
 	var SPEED = 30; // * 10 pixels per second
 	//var WIDTH = 5;
-	var HEIGHT = 5;
+	var HEIGHT = 7.5;
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
 	var GAMEOVER = true;
