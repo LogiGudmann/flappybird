@@ -17,7 +17,7 @@
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
-        <audio  src="sounds/SimmD.mp3" id="Introsong" preload="auto" loop="" autoplay=""></audio>
+        <audio class="music" id="themeSong" src="sounds/SimmD.mp3" id="Introsong" preload="auto" loop="" autoplay=""></audio>
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -25,9 +25,6 @@
         <![endif]-->
 
         <div class="GameCanvas">
-
-            <div class="block blockTop"></div>
-            <div class="blocl blockBot"></div>
             <div class="Player">
               <div class="Player-wings"> </div>
             </div>
@@ -42,6 +39,8 @@
                     <span class="Scoreboard-restartText">Restart</span>
                 </button>
             </div>
+            <div class="Mute" hidden><img class="muteClass" onclick="muteSound();" src="img/mute.png"></div>
+            <div class="UnMute"><img class="muteClass" onclick="muteSound();" src="img/unmute.png"></div>
         </div>
 
         <!-- build:js scripts/vendor.js -->
@@ -56,6 +55,7 @@
         <script src="scripts/game.js"></script>
         <script src="scripts/player.js"></script>
         <script src="scripts/utils.js"></script>
+        <script src="scripts/sound.js"></script>
         <!-- endbuild -->
 </body>
 </html>

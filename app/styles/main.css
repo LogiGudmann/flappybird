@@ -120,6 +120,7 @@ margin-top: -28.8em;
 overflow: hidden;
 background-image: url("../img/Althingi.jpg");
 background-size: 100%;
+user-select: none;   
 }
 
 @keyframes groundAnimation {
@@ -145,6 +146,13 @@ background-size: 100%;
   animation: none;
 }
 
+.muteClass{
+	width:50px;
+
+}
+
+
+
 .block {
   position: absolute;
   height: 20em;
@@ -154,7 +162,4 @@ background-size: 100%;
   background-size: contain; 
 */}
 
-.blockTop{
-}
-.blockBot{
-}
+
