@@ -27,7 +27,7 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	transform-origin: top left;
-	animation: 0.5s Flappmundur alternate infinite;
+	animation: 0.3s Flappmundur alternate infinite;
 
 }
 @keyframes Flappmundur {
@@ -143,4 +143,18 @@ background-size: 100%;
 
 .stopGround {
   animation: none;
+}
+
+.block {
+  position: absolute;
+  height: 20em;
+  width: 20em;
+  /*background-image: url("/../img/blocks.png"); 
+  background-repeat: no-repeat;
+  background-size: contain; 
+*/}
+
+.blockTop{
+}
+.blockBot{
 }
