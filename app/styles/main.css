@@ -13,16 +13,19 @@
 
 	position: absolute;
 	/*Vinstri hafa það sem mest hjá okkur*/
-	left: 0.0em;
+	left: -1.9em;
 	/*Hæðin af vængjunum*/
 	/*top: 0.1em;*/
-	bottom:0.9em;
+	bottom:-1.9em;
 	/*Lengdin af vængjunum*/
-	height: 0.9em;
+	height: 3.1em;
 	/*Breiddin*/
-	width: 0.9em;
+	width: 3.1em;
 
-	background:red;
+
+	background-image: url('../img/wing.jpg');
+	background-repeat: no-repeat;
+	background-size: contain;
 	transform-origin: top left;
 	animation: 0.5s Flappmundur alternate infinite;
 
@@ -35,34 +38,7 @@
     transform: rotateX(180deg);
   }
 }
-/*
-.Player-wings {
-  // Positioned from top left of parent.
-  position: absolute;
-	Vinstri hafa það sem mest hjá okkur
-  left: 0.25em;
-	Hæðin af vængjunum
-  top: 0.4em;
-	Lengdin af vængjunum
-  height: 0.8em;
-	Breiddin
-  width: 0.5em;
 
-
-  background: yellow;
-  transform-origin: top left;
-  animation: 0.4s flap alternate infinite;
-}
-
-@keyframes flap {
-  from {
-    transform: rotateX(0);
-  }
-  to {
-    transform: rotateX(180deg);
-  }
-}
-*/
 .Scoreboard {
 	position: absolute;
 	left: 50%;
