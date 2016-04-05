@@ -34,6 +34,12 @@ window.Player = (function() {
 			this.pos.y -= delta *SPEED;
 			GAMEOVER = false;
 		}
+		//Not working
+		else if (Controls.keys.click) {
+			SPEED = 40;
+			this.pos.y -= delta *SPEED;
+			GAMEOVER = false;
+		}
 		else if(GAMEOVER == false)
 		{
 			SPEED -= 3;
@@ -47,7 +53,6 @@ window.Player = (function() {
 	Player.prototype.checkCollisionWithBounds = function() {
 		if (this.pos.x < 0 ||
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
-			this.pos.y < 0 ||
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
 			GAMEOVER = true;
 			return this.game.gameover();
