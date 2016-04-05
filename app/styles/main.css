@@ -81,6 +81,8 @@ background-size: 100%;
   width: 200%;
   height: 2.5em;
   background-image: url("/../img/money.png");
+  background-repeat: repeat-x;	
+  background-size: contain;
   animation: groundAnimation 0.5s linear infinite; 
 }
 
