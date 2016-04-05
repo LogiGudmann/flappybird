@@ -30,7 +30,7 @@ window.Controls = (function() {
     };
 
     Controls.prototype._onKeyDown = function(e) {
-        /*if(e.type === 'mousedown' )
+      /*  if(e.type === 'mousedown' )
         {
           e.keyCode = 32;
         }*/
@@ -39,10 +39,7 @@ window.Controls = (function() {
             this._didJump = true;
         }
 
-        /*if(e.type === 'mouseup' )
-        {
-          e.keyCode = 32;
-        }*/
+
         // Remember that this button is down.
         if (e.keyCode in KEYS) {
             var keyName = KEYS[e.keyCode];
@@ -52,11 +49,18 @@ window.Controls = (function() {
     };
 
     Controls.prototype._onKeyUp = function(e) {
+      /*if(e.type === 'mouseup')
+      {
+        e.keyCode = 40;
+      }
+      */
+
         if (e.keyCode in KEYS) {
             var keyName = KEYS[e.keyCode];
             this.keys[keyName] = false;
             return false;
         }
+
     };
 
     /**

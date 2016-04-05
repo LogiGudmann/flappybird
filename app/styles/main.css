@@ -39,6 +39,31 @@
   }
 }
 
+.Menu{
+	position: absolute;
+	left: 50%;
+	top: 10em;
+	height: 30em;
+	width: 40em;
+	margin-left: -20em;
+	box-sizing: border-box;
+	text-align: center;
+	-webkit-transform: translate(0, -40em);
+	-webkit-transition: -webkit-transform 0.5s;
+}
+.Menu.is-visible {
+	-webkit-transform: none;
+}
+.WelcomeMessage{
+	color:white;
+	background:rgba(0,0,0,.66);
+	font-size:25px;
+}
+.Instructions{
+	color:white;
+	background:rgba(0,0,0,.66);
+	font-size:25px;
+}
 .Scoreboard {
 	position: absolute;
 	left: 50%;
@@ -52,7 +77,6 @@
 	-webkit-transform: translate(0, -40em);
 	-webkit-transition: -webkit-transform 0.5s;
 }
-
 /**
 * Reset transform to animate it into the correct spot on the screen.
 */
