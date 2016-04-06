@@ -6,6 +6,7 @@ window.Controls = (function() {
      * Key codes we're interested in.
      */
     var KEYS = {
+         0: 'click',
         32: 'space',
         37: 'left',
         38: 'up',
@@ -25,15 +26,18 @@ window.Controls = (function() {
         $(window)
             .on('keydown', this._onKeyDown.bind(this))
             .on('keyup', this._onKeyUp.bind(this))
-            .on('mousedown', this._onKeyDown.bind(this))
-            .on('mouseup', this._onKeyUp.bind(this));
+            .on('mousedown', this._onMouseDown.bind(this))
+            .on('mouseup', this._onMouseUp.bind(this));
+    };
+    Controls.prototype._onMouseDown = function() {
+      this.keys.click = true;
+    };
+    Controls.prototype._onMouseUp = function() {
+      this.keys.click = false;
     };
 
     Controls.prototype._onKeyDown = function(e) {
-      /*  if(e.type === 'mousedown' )
-        {
-          e.keyCode = 32;
-        }*/
+
         // Only jump if space wasn't pressed.
         if (e.keyCode === 32 && this.keys.space) {
             this._didJump = true;
@@ -49,12 +53,6 @@ window.Controls = (function() {
     };
 
     Controls.prototype._onKeyUp = function(e) {
-      /*if(e.type === 'mouseup')
-      {
-        e.keyCode = 40;
-      }
-      */
-
         if (e.keyCode in KEYS) {
             var keyName = KEYS[e.keyCode];
             this.keys[keyName] = false;
