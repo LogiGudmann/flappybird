@@ -53,6 +53,7 @@ window.Player = (function() {
 			//Exponential
 			ROTATESIMMI += 1.5;
 			SPEED -= 3;
+			
 			this.pos.y -= delta * SPEED;
 	  }
 		//console.log(STARTINGNEWGAME);

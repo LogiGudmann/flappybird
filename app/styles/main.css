@@ -120,7 +120,7 @@ margin-top: -28.8em;
 overflow: hidden;
 background-image: url("../img/Althingi.jpg");
 background-size: 100%;
-user-select: none;   
+user-select: none;
 }
 
 @keyframes groundAnimation {
@@ -157,9 +157,26 @@ user-select: none;
   position: absolute;
   height: 20em;
   width: 20em;
-  /*background-image: url("/../img/blocks.png"); 
+  /*background-image: url("/../img/blocks.png");
   background-repeat: no-repeat;
-  background-size: contain; 
+  background-size: contain;
 */}
 
 
+/*cloud*/
+
+.BjarniCloud{
+	position: absolute;
+	width: 80em;
+	top: 6em;
+	height: 19.5em;
+	background-image: url("/../img/cloud.png");
+	background-size: 22em, 22em;
+	background-repeat: no-repeat;
+	animation: BjarniCloud 7.2s linear infinite;
+
+}
+@keyframes BjarniCloud {
+	from {background-position: 100% 0 ;}
+	to {background-position:0  0;}
+}
