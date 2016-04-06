@@ -34,6 +34,8 @@ window.Player = (function() {
 	Player.prototype.onFrame = function(delta) {
 
 		if (Controls.keys.space) {
+			document.getElementById('Introsong').pause();
+			document.getElementById('Introsong').currentTime = 0;
 			//This should be hardcoded
 			ROTATESIMMI = -30;
 			SPEED = 40;
@@ -53,7 +55,7 @@ window.Player = (function() {
 			//Exponential
 			ROTATESIMMI += 1.5;
 			SPEED -= 3;
-			
+
 			this.pos.y -= delta * SPEED;
 	  }
 		//console.log(STARTINGNEWGAME);

@@ -9,9 +9,13 @@ window.Game = (function() {
 	 */
 	var Game = function(el) {
 		this.el = el;
+
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.isPlaying = false;
 		this.groundMoney = this.el.find('.groundMoney');
+		//this.IntroSong = this.el.find('.');
+    document.getElementById('Introsong').play();
+
 
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
@@ -58,6 +62,9 @@ window.Game = (function() {
 		var Menu = this.el.find('.Menu');
 		//Only works on clicking on that said element
 		//Need to fix to put for whole game
+		document.getElementById('Losersound').pause();
+		document.getElementById('Introsong').currentTime = 0;
+		document.getElementById('Introsong').play();
 		Menu
 			.addClass('is-visible')
 			.one('click',function(){
@@ -77,6 +84,9 @@ window.Game = (function() {
 		this.isPlaying = false;
 		this.groundMoney.addClass('stopGround');
 		this.GAMEOVER = false;
+		document.getElementById('Introsong').pause();
+		document.getElementById('Introsong').currentTime = 0;
+		document.getElementById('Losersound').play();
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');

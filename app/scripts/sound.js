@@ -5,11 +5,11 @@ function muteSound() {
 		MUTED = true;
 		$('.Mute').show();
 		$('.UnMute').hide();
-		document.getElementById('themeSong').pause();
+		document.getElementById('Introsong').pause();
 		} else {
 		MUTED = false;
 		$('.Mute').hide();
 		$('.UnMute').show();
-		document.getElementById('themeSong').play();
+		document.getElementById('Introsong').play();
 	}
 }

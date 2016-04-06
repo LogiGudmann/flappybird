@@ -167,13 +167,14 @@ user-select: none;
 
 .BjarniCloud{
 	position: absolute;
-	width: 80em;
+	width: 130em;
 	top: 6em;
 	height: 19.5em;
 	background-image: url("/../img/cloud.png");
 	background-size: 22em, 22em;
 	background-repeat: no-repeat;
 	animation: BjarniCloud 7.2s linear infinite;
+  opacity: 0.6;
 
 }
 @keyframes BjarniCloud {
