@@ -7,6 +7,10 @@ window.Game = (function() {
 	 * @param {Element} el jQuery element containing the game.
 	 * @constructor
 	 */
+	 var score = 0;
+	 var highScore = 0;
+
+
 	var Game = function(el) {
 		this.el = el;
 
@@ -78,6 +82,8 @@ window.Game = (function() {
 		this.groundMoney.removeClass('stopGround');
 		this.GAMEOVER = true;
 		this.STARTINGNEWGAME = true;
+		score = 0;
+		$('.ScoreCounter').text(''+ score);
 	};
 
 	/**
@@ -100,7 +106,17 @@ window.Game = (function() {
 					scoreboardEl.removeClass('is-visible');
 					that.start();
 				});
+		if(score > highScore){
+			highScore = score;
+		}
+		$('.Score').text('Score '+ score);
+		$('.HighScore').text('High score '+ highScore);
 	};
+
+	Game.prototype.updateScore = function() {
+		score++;
+		$('.ScoreCounter').text(''+ score);
+	}
 
 	/**
 	 * Some shared constants.

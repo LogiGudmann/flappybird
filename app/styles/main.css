@@ -7,7 +7,7 @@
 	background-image: url('../img/simmi.png');
 	background-repeat: no-repeat;
 	background-size: contain;
-  transform: translate(30em, 25em);
+	transform: translate(30em, 25em);
 }
 
 .Player-wings {
@@ -45,7 +45,7 @@
 }
 
 @keyframes Flappmundur2 {
-from {
+	from {
 		transform: rotateX(0);
 	}
 	to {
@@ -141,134 +141,138 @@ from {
 }
 
 .Scoreboard-restartText {
-font-family: 'Comic Sans MS', serif;
-font-size: 2.4em;
-color: black;
+	font-family: 'Comic Sans MS', serif;
+	font-size: 2.4em;
+	color: black;
 }
-
+.ScoreCounter{
+	font-family: 'Comic Sans MS', serif;
+	font-size: 2.4em;
+	color: white;
+}
 body {
-background: black;
+	background: black;
 }
 
 .browsehappy {
-margin: 0.2em 0;
-background: ?#?ccc?;
-color: #000;
-padding: 0.2em 0;
+	margin: 0.2em 0;
+	background: ?#?ccc?;
+	color: #000;
+	padding: 0.2em 0;
 }
 
 .GameCanvas {
-font-size: 10px;
-position: absolute;
-left: 50%;
-top: 50%;
-width: 102.4em;
-height: 57.6em;
-margin-left: -51.2em;
-margin-top: -28.8em;
-overflow: hidden;
-background-image: url("../img/Althingi.jpg");
-background-size: 100%;
-user-select: none;
+	font-size: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 102.4em;
+	height: 57.6em;
+	margin-left: -51.2em;
+	margin-top: -28.8em;
+	overflow: hidden;
+	background-image: url("../img/Althingi.jpg");
+	background-size: 100%;
+	user-select: none;
 }
 
 @keyframes groundAnimation {
-  0% {
-    transform: translateZ(0) translate(0em, 0em); }
-  100% {
-    transform: translateZ(0) translate(-6em, 0em); }
-}
+	0% {
+		transform: translateZ(0) translate(0em, 0em); }
+		100% {
+			transform: translateZ(0) translate(-6em, 0em); }
+		}
 
-.groundMoney {
-  position: absolute;
-  bottom: 0;
-  z-index: 1;
-  width: 200%;
-  height: 2.5em;
-  background-image: url("/../img/money.png");
-  background-repeat: repeat-x;
-  background-size: contain;
-  animation: groundAnimation 0.5s linear infinite;
-}
+		.groundMoney {
+			position: absolute;
+			bottom: 0;
+			z-index: 1;
+			width: 200%;
+			height: 2.5em;
+			background-image: url("/../img/money.png");
+			background-repeat: repeat-x;
+			background-size: contain;
+			animation: groundAnimation 0.5s linear infinite;
+		}
 
-.stopGround {
-  animation: none;
-}
+		.stopGround {
+			animation: none;
+		}
 
-.muteClass{
-	width:50px;
+		.muteClass{
+			width:50px;
 
-}
-/*cloud*/
+		}
+		/*cloud*/
 
-.BjarniCloud {
-	position: absolute;
-	width: 130em;
-	top: 6em;
-	height: 19.5em;
-	background-image: url("/../img/cloud.png");
-	background-size: 22em, 22em;
-	background-repeat: no-repeat;
-	animation: BjarniCloud 7.2s linear infinite;
-  	opacity: 0.6;
+		.BjarniCloud {
+			position: absolute;
+			width: 130em;
+			top: 6em;
+			height: 19.5em;
+			background-image: url("/../img/cloud.png");
+			background-size: 22em, 22em;
+			background-repeat: no-repeat;
+			animation: BjarniCloud 7.2s linear infinite;
+			opacity: 0.6;
 
-}
+		}
 
-.BjarniCloud2 {
-	position: absolute;
-	width: 150em;
-	top: 3em;
-	height: 12.5em;
-	background-image: url("/../img/cloud2.png");
-	background-size: 10em, 10em;
-	background-size: contain;
-	background-repeat: no-repeat;
-	animation: BjarniCloud 15s linear infinite;
-  	opacity: 0.6;
+		.BjarniCloud2 {
+			position: absolute;
+			width: 150em;
+			top: 3em;
+			height: 12.5em;
+			background-image: url("/../img/cloud2.png");
+			background-size: 10em, 10em;
+			background-size: contain;
+			background-repeat: no-repeat;
+			animation: BjarniCloud 15s linear infinite;
+			opacity: 0.6;
 
-}
-@keyframes BjarniCloud {
-	from {background-position: 100% 0 ;}
-	to {background-position:-25%  0;}
-}
-@keyframes BjarniCloud2 {
-	from {background-position: 130% 0 ;}
-	to {background-position:-25%  0;}
-}
+		}
+		@keyframes BjarniCloud {
+			from {background-position: 100% 0 ;}
+			to {background-position:-25%  0;}
+		}
+		@keyframes BjarniCloud2 {
+			from {background-position: 130% 0 ;}
+			to {background-position:-25%  0;}
+		}
 
-.Signs{
-}
+		.Signs{
+		}
 
-.Signs div{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 7em;
-	height: 40em;
-	background-size: contain;
-    background-repeat: no-repeat;
-}
+		.Signs div{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 7em;
+			height: 40em;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
 
-#bigSign1{
-   	background-image: url("../img/bigSign.png");
-}
+		#bigSign1{
+			background-image: url("../img/bigSign.png");
+		}
 
-#bigSign2{
-   	background-image: url("../img/bigSign2.png");
-}
+		#bigSign2{
+			background-image: url("../img/bigSign2.png");
+		}
 
-#bigSign3{
-   	background-image: url("../img/bigSign3.png");
-}
+		#bigSign3{
+			background-image: url("../img/bigSign3.png");
+		}
 
-#bigSign4 {
-   	background-image: url("../img/bigSign.png");
-}
+		#bigSign4 {
+			background-image: url("../img/bigSign.png");
+		}
 
-#bigSign5 {
-   	background-image: url("../img/bigSign2.png");
-}
+		#bigSign5 {
+			background-image: url("../img/bigSign2.png");
+		}
 
-#bigSign6 {
-   	background-image: url("../img/bigSign3.png");
-}
+		#bigSign6 {
+			background-image: url("../img/bigSign3.png");
+		}

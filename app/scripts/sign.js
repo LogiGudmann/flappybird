@@ -80,6 +80,7 @@ window.Sign = (function() {
 				}
 				console.log("Madeit through");
 				// needs to update score
+				this.game.updateScore();
 				this.signPos[i].complete = true;
 				this.signPos[i + 1].complete = true;
 			}
