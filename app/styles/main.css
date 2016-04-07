@@ -9,6 +9,7 @@
 	background-size: contain;
   transform: translate(30em, 25em);
 }
+
 .Player-wings {
 
 	position: absolute;
@@ -27,16 +28,29 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	transform-origin: top left;
-	animation: 0.3s Flappmundur alternate infinite;
-
+	animation: 0.2s Flappmundur1 alternate infinite;
 }
-@keyframes Flappmundur {
-  from {
-    transform: rotateX(0);
-  }
-  to {
-    transform: rotateX(180deg);
-  }
+
+.Player-wings-flapping{
+	animation: 0.1s Flappmundur2 alternate infinite;
+}
+
+@keyframes Flappmundur1 {
+	from {
+		transform: rotateX(0);
+	}
+	to {
+		transform: rotateX(180deg);
+	}
+}
+
+@keyframes Flappmundur2 {
+from {
+		transform: rotateX(0);
+	}
+	to {
+		transform: rotateX(30);
+	}
 }
 
 .Menu{
@@ -51,17 +65,21 @@
 	-webkit-transform: translate(0, -40em);
 	-webkit-transition: -webkit-transform 0.5s;
 }
+
 .Menu.is-visible {
 	-webkit-transform: none;
 }
+
 .WelcomeMessage{
 	color:black;
 	font-size:25px;
 }
+
 .Instructions{
 	color:black;
 	font-size:25px;
 }
+
 .Scoreboard {
 	position: absolute;
 	left: 50%;
@@ -83,31 +101,62 @@
 .Scoreboard.is-visible {
 	-webkit-transform: none;
 }
-.EndGame{
-	margin-top: 10em;
+
+.HighScore{
+	left:3.4em;
+	position:absolute;
+	font-family: 'Comic Sans MS', serif;
+	font-size: 2.4em;
+	color: black;
+	margin-top: 5.4em;
 }
+
+.Score{
+	left:3.4em;
+	position:absolute;
+	font-family: 'Comic Sans MS', serif;
+	font-size: 2.4em;
+	color: black;
+	margin-top: 2.4em;
+}
+
+.EndGame{
+	left:6.4em;
+	position:absolute;
+	font-family: 'Comic Sans MS', serif;
+	font-size: 2.4em;
+	color: black;
+	margin-top: 0.4em;
+}
+
 .Scoreboard-restart {
-	margin-top: 20em;
+	top:20em;
+	left:15em;
+	position: absolute;
 	font-size: inherit;
 	padding: 0.4em 1.5em;
 	border: 0.2em solid black;
 	background: none;
 	cursor: pointer;
 }
+
 .Scoreboard-restartText {
 font-family: 'Comic Sans MS', serif;
 font-size: 2.4em;
 color: black;
 }
+
 body {
 background: black;
 }
+
 .browsehappy {
 margin: 0.2em 0;
 background: ?#?ccc?;
 color: #000;
 padding: 0.2em 0;
 }
+
 .GameCanvas {
 font-size: 10px;
 position: absolute;
@@ -150,22 +199,9 @@ user-select: none;
 	width:50px;
 
 }
-
-
-
-.block {
-  position: absolute;
-  height: 20em;
-  width: 20em;
-  /*background-image: url("/../img/blocks.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-*/}
-
-
 /*cloud*/
 
-.BjarniCloud{
+.BjarniCloud {
 	position: absolute;
 	width: 130em;
 	top: 6em;
@@ -174,11 +210,11 @@ user-select: none;
 	background-size: 22em, 22em;
 	background-repeat: no-repeat;
 	animation: BjarniCloud 7.2s linear infinite;
-  opacity: 0.6;
+  	opacity: 0.6;
 
 }
 
-.BjarniCloud2{
+.BjarniCloud2 {
 	position: absolute;
 	width: 150em;
 	top: 3em;
@@ -212,22 +248,27 @@ user-select: none;
 	background-size: contain;
     background-repeat: no-repeat;
 }
+
 #bigSign1{
    	background-image: url("../img/bigSign.png");
 }
+
 #bigSign2{
    	background-image: url("../img/bigSign2.png");
 }
+
 #bigSign3{
    	background-image: url("../img/bigSign3.png");
 }
+
 #bigSign4 {
    	background-image: url("../img/bigSign.png");
 }
+
 #bigSign5 {
    	background-image: url("../img/bigSign2.png");
 }
+
 #bigSign6 {
    	background-image: url("../img/bigSign3.png");
-
 }

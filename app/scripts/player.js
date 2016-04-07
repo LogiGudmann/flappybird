@@ -14,6 +14,7 @@ window.Player = (function() {
 	var GAMEOVER = false;
 	var STARTINGNEWGAME = true;
 	var PLAYING = false;
+	var ISFLYING = false;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -30,6 +31,7 @@ window.Player = (function() {
 		GAMEOVER = true;
 		STARTINGNEWGAME = true;
 		ROTATESIMMI = -10;
+		ISFLYING = false;
 	};
 
 	Player.prototype.onFrame = function(delta) {
@@ -45,6 +47,7 @@ window.Player = (function() {
 			this.pos.y -= delta *SPEED;
 			GAMEOVER = false;
 			STARTINGNEWGAME = false;
+			ISFLYING = true;
 		}
 		else if(GAMEOVER === false)
 		{
@@ -52,11 +55,26 @@ window.Player = (function() {
 			ROTATESIMMI += 1.5;
 			SPEED -= 3;
 			this.pos.y -= delta * SPEED;
+			ISFLYING = false;
 	  }
 		//console.log(STARTINGNEWGAME);
 		this.checkCollisionWithBounds();
 		// Update UI
 		this.el.css('transform', ' translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)' + 'rotate('+ ROTATESIMMI + 'deg)');
+		if(ISFLYING === true)
+		{
+				var wings = this.el.find('.Player-wings');
+				wings
+				.addClass('Player-wings-flapping');
+			//	console.log("We go here at least,flying");
+		}
+		else if(ISFLYING === false)
+		{
+			var wings = this.el.find('.Player-wings');
+			wings
+			.removeClass('Player-wings-flapping');
+			//console.log("We go here at least, not flying");
+		}
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
