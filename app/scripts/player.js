@@ -38,8 +38,9 @@ window.Player = (function() {
 
 	 	if (Controls.keys.space || Controls.keys.click) {
 			//Restarting the song and start new song for gameplay
-			document.getElementById('Introsong').pause();
-			document.getElementById('Introsong').currentTime = 0;
+			//document.getElementById('Introsong').pause();
+			//document.getElementById('Introsong').currentTime = 0;
+			document.getElementById('FlappingSound').play();
 			//This should be hardcoded
 			PLAYING = true;
 			ROTATESIMMI = -30;
