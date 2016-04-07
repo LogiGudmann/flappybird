@@ -183,96 +183,96 @@ body {
 			transform: translateZ(0) translate(-6em, 0em); }
 		}
 
-		.groundMoney {
-			position: absolute;
-			bottom: 0;
-			z-index: 1;
-			width: 200%;
-			height: 2.5em;
-			background-image: url("/../img/money.png");
-			background-repeat: repeat-x;
-			background-size: contain;
-			animation: groundAnimation 0.5s linear infinite;
-		}
+.groundMoney {
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	width: 200%;
+	height: 2.5em;
+	background-image: url("/../img/money.png");
+	background-repeat: repeat-x;
+	background-size: contain;
+	animation: groundAnimation 0.5s linear infinite;
+}
 
-		.stopGround {
-			animation: none;
-		}
+.stopGround {
+	animation: none;
+}
 
-		.muteClass{
-			width:50px;
+.muteClass{
+	width:50px;
 
-		}
-		/*cloud*/
+}
+/*cloud*/
 
-		.BjarniCloud {
-			position: absolute;
-			width: 130em;
-			top: 6em;
-			height: 19.5em;
-			background-image: url("/../img/cloud.png");
-			background-size: 22em, 22em;
-			background-repeat: no-repeat;
-			animation: BjarniCloud 7.2s linear infinite;
-			opacity: 0.6;
+.BjarniCloud {
+	position: absolute;
+	width: 130em;
+	top: 6em;
+	height: 19.5em;
+	background-image: url("/../img/cloud.png");
+	background-size: 22em, 22em;
+	background-repeat: no-repeat;
+	animation: BjarniCloud 7.2s linear infinite;
+	opacity: 0.6;
 
-		}
+}
 
-		.BjarniCloud2 {
-			position: absolute;
-			width: 150em;
-			top: 3em;
-			height: 12.5em;
-			background-image: url("/../img/cloud2.png");
-			background-size: 10em, 10em;
-			background-size: contain;
-			background-repeat: no-repeat;
-			animation: BjarniCloud 15s linear infinite;
-			opacity: 0.6;
+.BjarniCloud2 {
+	position: absolute;
+	width: 150em;
+	top: 3em;
+	height: 12.5em;
+	background-image: url("/../img/cloud2.png");
+	background-size: 10em, 10em;
+	background-size: contain;
+	background-repeat: no-repeat;
+	animation: BjarniCloud 15s linear infinite;
+	opacity: 0.6;
 
-		}
-		@keyframes BjarniCloud {
-			from {background-position: 100% 0 ;}
-			to {background-position:-25%  0;}
-		}
-		@keyframes BjarniCloud2 {
-			from {background-position: 130% 0 ;}
-			to {background-position:-25%  0;}
-		}
+}
+@keyframes BjarniCloud {
+	from {background-position: 100% 0 ;}
+	to {background-position:-25%  0;}
+}
+@keyframes BjarniCloud2 {
+	from {background-position: 130% 0 ;}
+	to {background-position:-25%  0;}
+}
 
-		.Signs{
-		}
+.Signs{
+}
 
-		.Signs div{
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 7em;
-			height: 40em;
-			background-size: contain;
-			background-repeat: no-repeat;
-		}
+.Signs div{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 6em;
+	height: 40em;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
 
-		#bigSign1{
-			background-image: url("../img/bigSign.png");
-		}
+#bigSign1{
+	background-image: url("../img/bigSign.png");
+}
 
-		#bigSign2{
-			background-image: url("../img/bigSign2.png");
-		}
+#bigSign2{
+	background-image: url("../img/bigSign2.png");
+}
 
-		#bigSign3{
-			background-image: url("../img/bigSign3.png");
-		}
+#bigSign3{
+	background-image: url("../img/bigSign3.png");
+}
 
-		#bigSign4 {
-			background-image: url("../img/bigSign.png");
-		}
+#bigSign4 {
+	background-image: url("../img/bigSign.png");
+}
 
-		#bigSign5 {
-			background-image: url("../img/bigSign2.png");
-		}
+#bigSign5 {
+	background-image: url("../img/bigSign2.png");
+}
 
-		#bigSign6 {
-			background-image: url("../img/bigSign3.png");
-		}
+#bigSign6 {
+	background-image: url("../img/bigSign3.png");
+}
