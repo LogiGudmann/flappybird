@@ -77,7 +77,7 @@ window.Sign = (function() {
 				{
 					return this.game.gameover();
 				}
-				console.log("Madeit through");
+				//console.log("Madeit through");
 				this.game.updateScore();
 				this.signPos[i].complete = true;
 				this.signPos[i + 1].complete = true;
