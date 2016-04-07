@@ -25,18 +25,18 @@ window.Player = (function() {
 	/**
 	 * Resets the state of the player for a new game.
 	 */
-	Player.prototype.reset = function() {
-		this.pos.x = INITIAL_POSITION_X;
-		this.pos.y = INITIAL_POSITION_Y;
-		GAMEOVER = true;
-		STARTINGNEWGAME = true;
-		ROTATESIMMI = -10;
-		ISFLYING = false;
-	};
+	 Player.prototype.reset = function() {
+	 	this.pos.x = INITIAL_POSITION_X;
+	 	this.pos.y = INITIAL_POSITION_Y;
+	 	GAMEOVER = true;
+	 	STARTINGNEWGAME = true;
+	 	ROTATESIMMI = -10;
+	 	ISFLYING = false;
+	 };
 
-	Player.prototype.onFrame = function(delta) {
+	 Player.prototype.onFrame = function(delta) {
 
-		if (Controls.keys.space || Controls.keys.click) {
+	 	if (Controls.keys.space || Controls.keys.click) {
 			//Restarting the song and start new song for gameplay
 			document.getElementById('Introsong').pause();
 			document.getElementById('Introsong').currentTime = 0;
@@ -56,16 +56,16 @@ window.Player = (function() {
 			SPEED -= 3;
 			this.pos.y -= delta * SPEED;
 			ISFLYING = false;
-	  }
+		}
 		//console.log(STARTINGNEWGAME);
 		this.checkCollisionWithBounds();
 		// Update UI
 		this.el.css('transform', ' translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)' + 'rotate('+ ROTATESIMMI + 'deg)');
 		if(ISFLYING === true)
 		{
-				var wings = this.el.find('.Player-wings');
-				wings
-				.addClass('Player-wings-flapping');
+			var wings = this.el.find('.Player-wings');
+			wings
+			.addClass('Player-wings-flapping');
 			//	console.log("We go here at least,flying");
 		}
 		else if(ISFLYING === false)
@@ -82,10 +82,10 @@ window.Player = (function() {
 			GAMEOVER = true;
 		//	console.log("Testing");
 		//	console.log(STARTINGNEWGAME);
-			return this.game.gameover();
-		}
-	};
+		return this.game.gameover();
+	}
+};
 
-	return Player;
+return Player;
 
 })();

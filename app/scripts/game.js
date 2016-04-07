@@ -11,16 +11,16 @@ window.Game = (function() {
 	 var highScore = 0;
 
 
-	var Game = function(el) {
-		this.el = el;
+	 var Game = function(el) {
+	 	this.el = el;
 
-		this.player = new window.Player(this.el.find('.Player'), this);
-		this.sign = new window.Sign(this.el.find('.Signs'), this, this.player);
+	 	this.player = new window.Player(this.el.find('.Player'), this);
+	 	this.sign = new window.Sign(this.el.find('.Signs'), this, this.player);
 
-		this.isPlaying = false;
-		this.groundMoney = this.el.find('.groundMoney');
+	 	this.isPlaying = false;
+	 	this.groundMoney = this.el.find('.groundMoney');
 		//this.IntroSong = this.el.find('.');
-    	document.getElementById('Introsong').play();
+		document.getElementById('Introsong').play();
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
 	};
@@ -29,7 +29,7 @@ window.Game = (function() {
 	 * Runs every frame. Calculates a delta and allows each game
 	 * entity to update itself.
 	 */
-	Game.prototype.onFrame = function() {
+	 Game.prototype.onFrame = function() {
 		// Check if the game loop should stop.
 		if (!this.isPlaying) {
 			return;
@@ -37,7 +37,7 @@ window.Game = (function() {
 
 		// Calculate how long since last frame in seconds.
 		var now = +new Date() / 1000,
-				delta = now - this.lastFrame;
+		delta = now - this.lastFrame;
 		this.lastFrame = now;
 
 		// Update game entities.
@@ -52,8 +52,8 @@ window.Game = (function() {
 	/**
 	 * Starts a new game.
 	 */
-	Game.prototype.start = function() {
-		this.reset();
+	 Game.prototype.start = function() {
+	 	this.reset();
 
 		// Restart the onFrame loop
 		this.lastFrame = +new Date() / 1000;
@@ -64,19 +64,19 @@ window.Game = (function() {
 	/**
 	 * Resets the state of the game so a new game can be started.
 	 */
-	Game.prototype.reset = function() {
-		var Menu = this.el.find('.Menu');
+	 Game.prototype.reset = function() {
+	 	var Menu = this.el.find('.Menu');
 		//Only works on clicking on that said element
 		//Need to fix to put for whole game
 		document.getElementById('Losersound').pause();
 		document.getElementById('Introsong').currentTime = 0;
 		document.getElementById('Introsong').play();
 		Menu
-			.addClass('is-visible')
-			.one('click',function(){
-				Menu.removeClass('is-visible');
-				this.start();
-			});
+		.addClass('is-visible')
+		.one('click',function(){
+			Menu.removeClass('is-visible');
+			this.start();
+		});
 		this.player.reset();
 		this.sign.reset();
 		this.groundMoney.removeClass('stopGround');
@@ -89,23 +89,23 @@ window.Game = (function() {
 	/**
 	 * Signals that the game is over.
 	 */
-	Game.prototype.gameover = function() {
-		this.isPlaying = false;
-		this.groundMoney.addClass('stopGround');
-		this.GAMEOVER = false;
-		document.getElementById('Introsong').pause();
-		document.getElementById('Introsong').currentTime = 0;
-		document.getElementById('Losersound').play();
+	 Game.prototype.gameover = function() {
+	 	this.isPlaying = false;
+	 	this.groundMoney.addClass('stopGround');
+	 	this.GAMEOVER = false;
+	 	document.getElementById('Introsong').pause();
+	 	document.getElementById('Introsong').currentTime = 0;
+	 	document.getElementById('Losersound').play();
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
 		scoreboardEl
-			.addClass('is-visible')
-			.find('.Scoreboard-restart')
-				.one('click', function() {
-					scoreboardEl.removeClass('is-visible');
-					that.start();
-				});
+		.addClass('is-visible')
+		.find('.Scoreboard-restart')
+		.one('click', function() {
+			scoreboardEl.removeClass('is-visible');
+			that.start();
+		});
 		if(score > highScore){
 			highScore = score;
 		}
@@ -121,8 +121,8 @@ window.Game = (function() {
 	/**
 	 * Some shared constants.
 	 */
-	Game.prototype.WORLD_WIDTH = 102.4;
-	Game.prototype.WORLD_HEIGHT = 57.6;
+	 Game.prototype.WORLD_WIDTH = 102.4;
+	 Game.prototype.WORLD_HEIGHT = 57.6;
 
-	return Game;
-})();
+	 return Game;
+	})();

@@ -62,17 +62,17 @@ window.Sign = (function() {
 	Sign.prototype.checkCollisionWithBounds = function() {
 		for(var i = 0; i < SIGNS_ON_SCREEN; i++) {
 			if(((this.player.pos.x > this.signPos[i].x || (this.player.pos.x + PLAYER_SIZE) > this.signPos[i].x)
-			&&  this.player.pos.x < this.signPos[i].x + WIDTH 
-			&&  this.player.pos.y > this.signPos[i].y 
-			&&  this.player.pos.y < this.signPos[i].y + HEIGHT)
-			|| ((this.player.pos.x > this.signPos[i].x || this.player.pos.x + PLAYER_SIZE > this.signPos[i].x)
-			&& this.player.pos.x < (this.signPos[i].x + WIDTH) 
-			&& this.player.pos.y + PLAYER_SIZE > this.signPos[i].y 
-			&& this.player.pos.y + PLAYER_SIZE < this.signPos[i].y + HEIGHT)) {
+				&&  this.player.pos.x < this.signPos[i].x + WIDTH 
+				&&  this.player.pos.y > this.signPos[i].y 
+				&&  this.player.pos.y < this.signPos[i].y + HEIGHT)
+				|| ((this.player.pos.x > this.signPos[i].x || this.player.pos.x + PLAYER_SIZE > this.signPos[i].x)
+					&& this.player.pos.x < (this.signPos[i].x + WIDTH) 
+					&& this.player.pos.y + PLAYER_SIZE > this.signPos[i].y 
+					&& this.player.pos.y + PLAYER_SIZE < this.signPos[i].y + HEIGHT)) {
 				return this.game.gameover();
-			}
+		}
 
-			if(!this.signPos[i].complete && this.player.pos.x > this.signPos[i].x) {
+		if(!this.signPos[i].complete && this.player.pos.x > this.signPos[i].x) {
 				// Make sure player doesn't fly high and pass the signs
 				if(this.player.pos.y < this.signPos[i].y-HEIGHT)
 				{
