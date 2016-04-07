@@ -27,16 +27,26 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	transform-origin: top left;
-	animation: 0.3s Flappmundur alternate infinite;
-
+	animation: 0.3s Flappmundur1 alternate infinite;
 }
-@keyframes Flappmundur {
-  from {
-    transform: rotateX(0);
-  }
-  to {
-    transform: rotateX(180deg);
-  }
+.Player-wings-flapping{
+	animation: 0.3s Flappmundur alternate infinite;
+}
+@keyframes Flappmundur1 {
+	from {
+		transform: rotateX(0);
+	}
+	to {
+		transform: rotateX(180deg);
+	}
+}
+@keyframes Flappmundur2 {
+	from {
+		transform: rotateX(0);
+	}
+	to {
+		transform: rotateX(220deg);
+	}
 }
 
 .Menu{

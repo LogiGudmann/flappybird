@@ -29,6 +29,8 @@ window.Controls = (function() {
             .on('mousedown', this._onMouseDown.bind(this))
             .on('mouseup', this._onMouseUp.bind(this));
     };
+    //Touchend for touch
+    //Touchstart for touch same
     Controls.prototype._onMouseDown = function() {
       this.keys.click = true;
     };

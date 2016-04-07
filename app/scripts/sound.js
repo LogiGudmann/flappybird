@@ -1,4 +1,4 @@
-var MUTED = false;
+var MUTED = true;
 function muteSound() {
 	'use strict';
 	if(!MUTED) {
