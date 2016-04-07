@@ -27,10 +27,10 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	transform-origin: top left;
-	animation: 0.3s Flappmundur1 alternate infinite;
+	animation: 0.2s Flappmundur1 alternate infinite;
 }
 .Player-wings-flapping{
-	animation: 0.3s Flappmundur alternate infinite;
+	animation: 0.1s Flappmundur2 alternate infinite;
 }
 @keyframes Flappmundur1 {
 	from {
@@ -41,11 +41,11 @@
 	}
 }
 @keyframes Flappmundur2 {
-	from {
+from {
 		transform: rotateX(0);
 	}
 	to {
-		transform: rotateX(220deg);
+		transform: rotateX(30);
 	}
 }
 
