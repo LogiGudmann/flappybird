@@ -93,11 +93,34 @@ from {
 .Scoreboard.is-visible {
 	-webkit-transform: none;
 }
+.HighScore{
+	left:3.4em;
+	position:absolute;
+	font-family: 'Comic Sans MS', serif;
+	font-size: 2.4em;
+	color: black;
+	margin-top: 5.4em;
+}
+.Score{
+	left:3.4em;
+	position:absolute;
+	font-family: 'Comic Sans MS', serif;
+	font-size: 2.4em;
+	color: black;
+	margin-top: 2.4em;
+}
 .EndGame{
-	margin-top: 10em;
+	left:6.4em;
+	position:absolute;
+	font-family: 'Comic Sans MS', serif;
+	font-size: 2.4em;
+	color: black;
+	margin-top: 0.4em;
 }
 .Scoreboard-restart {
-	margin-top: 20em;
+	top:20em;
+	left:15em;
+	position: absolute;
 	font-size: inherit;
 	padding: 0.4em 1.5em;
 	border: 0.2em solid black;

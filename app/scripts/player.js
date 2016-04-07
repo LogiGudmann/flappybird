@@ -64,14 +64,14 @@ window.Player = (function() {
 				var wings = this.el.find('.Player-wings');
 				wings
 				.addClass('Player-wings-flapping');
-				console.log("We go here at least,flying");
+			//	console.log("We go here at least,flying");
 		}
 		else if(ISFLYING === false)
 		{
 			var wings = this.el.find('.Player-wings');
 			wings
 			.removeClass('Player-wings-flapping');
-			console.log("We go here at least, not flying");
+			//console.log("We go here at least, not flying");
 		}
 	};
 
