@@ -7,12 +7,13 @@ window.Player = (function() {
 	// for 1024x576px canvas.
 	var SPEED = 30; // * 10 pixels per second
 	var ROTATESIMMI = -10;
-	//var WIDTH = 5;
-	var HEIGHT = 7.5;
+	var WIDTH = 5;
+	var HEIGHT = 5;
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 25;
 	var GAMEOVER = false;
 	var STARTINGNEWGAME = true;
+	var PLAYING = false;
 
 	var Player = function(el, game) {
 		this.el = el;
@@ -38,6 +39,7 @@ window.Player = (function() {
 			document.getElementById('Introsong').pause();
 			document.getElementById('Introsong').currentTime = 0;
 			//This should be hardcoded
+			PLAYING = true;
 			ROTATESIMMI = -30;
 			SPEED = 40;
 			this.pos.y -= delta *SPEED;

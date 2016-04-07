@@ -11,12 +11,12 @@ window.Game = (function() {
 		this.el = el;
 
 		this.player = new window.Player(this.el.find('.Player'), this);
+		this.sign = new window.Sign(this.el.find('.Signs'), this, this.player);
+
 		this.isPlaying = false;
 		this.groundMoney = this.el.find('.groundMoney');
 		//this.IntroSong = this.el.find('.');
-    document.getElementById('Introsong').play();
-
-
+    	document.getElementById('Introsong').play();
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
 	};
@@ -38,7 +38,9 @@ window.Game = (function() {
 
 		// Update game entities.
 		this.player.onFrame(delta);
-
+		if(!this.player.PLAYING){
+			this.sign.onFrame(delta);
+		}
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
 	};
@@ -72,6 +74,7 @@ window.Game = (function() {
 				this.start();
 			});
 		this.player.reset();
+		this.sign.reset();
 		this.groundMoney.removeClass('stopGround');
 		this.GAMEOVER = true;
 		this.STARTINGNEWGAME = true;

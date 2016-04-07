@@ -199,3 +199,35 @@ user-select: none;
 	from {background-position: 130% 0 ;}
 	to {background-position:-25%  0;}
 }
+
+.Signs{
+}
+
+.Signs div{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 7em;
+	height: 40em;
+	background-size: contain;
+    background-repeat: no-repeat;
+}
+#bigSign1{
+   	background-image: url("../img/bigSign.png");
+}
+#bigSign2{
+   	background-image: url("../img/bigSign2.png");
+}
+#bigSign3{
+   	background-image: url("../img/bigSign3.png");
+}
+#bigSign4 {
+   	background-image: url("../img/bigSign.png");
+}
+#bigSign5 {
+   	background-image: url("../img/bigSign2.png");
+}
+#bigSign6 {
+   	background-image: url("../img/bigSign3.png");
+
+}
