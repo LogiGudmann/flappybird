@@ -65,6 +65,7 @@ window.Game = (function() {
 	 * Resets the state of the game so a new game can be started.
 	 */
 	Game.prototype.reset = function() {
+		this.isPlaying = false;
 		var Menu = this.el.find('.Menu');
 		//Only works on clicking on that said element
 		//Need to fix to put for whole game
@@ -72,11 +73,22 @@ window.Game = (function() {
 		document.getElementById('Introsong').currentTime = 0;
 		document.getElementById('Introsong').play();
 		Menu
-			.addClass('is-visible')
-			.one('click',function(){
-				Menu.removeClass('is-visible');
-				this.start();
+			.addClass('is-visible'); 
+			// .one('click',function(){
+			// 	Menu.removeClass('is-visible');
+			// 	//this.start();
+			// });
+		if (this.isPlaying === false) {
+			$(window).keypress(function (e) {
+				if (e.keyCode === 32) {
+					Menu.removeClass('is-visible');
+				}
 			});
+
+			$(document).click(function() {
+				Menu.removeClass('is-visible');
+			});
+		}
 		this.player.reset();
 		this.sign.reset();
 		this.groundMoney.removeClass('stopGround');
@@ -106,6 +118,7 @@ window.Game = (function() {
 					scoreboardEl.removeClass('is-visible');
 					that.start();
 				});
+
 		if(score > highScore){
 			highScore = score;
 		}
