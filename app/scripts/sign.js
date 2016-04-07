@@ -3,6 +3,7 @@ window.Sign = (function() {
 	var SPEED = 25;
 	var WIDTH = 7;
 	var HEIGHT = 40;
+	var PLAYER_SIZE = 5;
 	var INITIAL_POSITION_X = 150;
 	var INITIAL_POSITION_Y = 25;
 	var SIGNS_ON_SCREEN = 6
@@ -22,7 +23,7 @@ window.Sign = (function() {
 
 	Sign.prototype.reset = function() {
 
-		for(var i = 0; i < SIGNS_ON_SCREEN; i+=2) {
+		for(var i = 0; i < SIGNS_ON_SCREEN; i += 2) {
 			var randomNum = Math.floor(Math.random() * RANDOM_MULTIPLE);
 			this.signPos[i].x = INITIAL_POSITION_X + i * RANDOM_MULTIPLE;
 			this.signPos[i].y = INITIAL_POSITION_Y + randomNum;
@@ -42,7 +43,7 @@ window.Sign = (function() {
 
 		this.checkCollisionWithBounds();
 
-		for(var i = 0; i < SIGNS_ON_SCREEN; i+=2) {
+		for(var i = 0; i < SIGNS_ON_SCREEN; i += 2) {
 			// Signs fade away, instead of disappearing all of a sudden.
 			if(this.signPos[i].x <= SIGN_FADE_OUT) {
 				var randomNum = Math.floor(Math.random() * RANDOM_MULTIPLE);
@@ -54,8 +55,8 @@ window.Sign = (function() {
 				this.signPos[i + 1].y = randomNum - SIGN_SPACE;
 				this.signPos[i + 1].complete = false;
 			}
-			this.signs[i].css('transform', 'translate(' + this.signPos[i].x + 'em, ' + this.signPos[i].y + 'em)');
-			this.signs[i + 1].css('transform', 'translate(' + this.signPos[i + 1].x + 'em, ' + this.signPos[i + 1].y + 'em)');
+			this.signs[i].css('transform', 'translateZ(0) translate(' + this.signPos[i].x + 'em, ' + this.signPos[i].y + 'em)');
+			this.signs[i + 1].css('transform', 'translateZ(0) translate(' + this.signPos[i + 1].x + 'em, ' + this.signPos[i + 1].y + 'em)');
 		}
 	};
 
@@ -66,18 +67,18 @@ window.Sign = (function() {
 			&&  this.player.pos.x < this.signPos[i].x + WIDTH 
 			&&  this.player.pos.y > this.signPos[i].y 
 			&&  this.player.pos.y < this.signPos[i].y + HEIGHT) 
-			|| ((this.player.pos.x + 5) > this.signPos[i].x 
+			/*|| ((this.player.pos.x + PLAYER_SIZE) > this.signPos[i].x 
 			&& this.player.pos.x < (this.signPos[i].x + WIDTH) 
 			&& this.player.pos.y > this.signPos[i].y 
-			&& this.player.pos.y < this.signPos[i].y + HEIGHT)
+			&& this.player.pos.y < this.signPos[i].y + HEIGHT)*/
 			|| (this.player.pos.x > this.signPos[i].x 
 			&& this.player.pos.x < (this.signPos[i].x + WIDTH) 
-			&& this.player.pos.y + 5 > this.signPos[i].y 
-			&& this.player.pos.y + 5 < this.signPos[i].y + HEIGHT)
-			|| (this.player.pos.x + 5 > this.signPos[i].x 
+			&& this.player.pos.y + PLAYER_SIZE > this.signPos[i].y 
+			&& this.player.pos.y + PLAYER_SIZE < this.signPos[i].y + HEIGHT)
+			|| (this.player.pos.x + PLAYER_SIZE > this.signPos[i].x 
 			&& this.player.pos.x < (this.signPos[i].x + WIDTH) 
-			&& this.player.pos.y + 5 > this.signPos[i].y
-			&& this.player.pos.y + 5 < this.signPos[i].y + HEIGHT)) {
+			&& this.player.pos.y + PLAYER_SIZE > this.signPos[i].y
+			&& this.player.pos.y + PLAYER_SIZE < this.signPos[i].y + HEIGHT)) {
 				return this.game.gameover();
 			}
 			if(!this.signPos[i].complete && this.player.pos.x > this.signPos[i].x) {
