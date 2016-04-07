@@ -3,27 +3,29 @@ window.Game = (function() {
 	'use strict';
 
 	/**
-	 * Main game class.
-	 * @param {Element} el jQuery element containing the game.
-	 * @constructor
-	 */
-	 var score = 0;
-	 var highScore = 0;
+	* Main game class.
+	* @param {Element} el jQuery element containing the game.
+	* @constructor
+	*/
+	var score = 0;
+	var highScore = 0;
+	document.getElementById('Introsong').volume = 0.1;
+	document.getElementById('Losersound').volume = 0.6;
+	document.getElementById('FlappingSound').volume = 1;
 
+	var Game = function(el) {
+		this.el = el;
 
-	 var Game = function(el) {
-	 	this.el = el;
+		this.player = new window.Player(this.el.find('.Player'), this);
+		this.sign = new window.Sign(this.el.find('.Signs'), this, this.player);
 
-	 	this.player = new window.Player(this.el.find('.Player'), this);
-	 	this.sign = new window.Sign(this.el.find('.Signs'), this, this.player);
-
-	 	this.isPlaying = false;
-	 	this.groundMoney = this.el.find('.groundMoney');
-		//this.IntroSong = this.el.find('.');
-		document.getElementById('Introsong').play();
-		// Cache a bound onFrame since we need it each frame.
-		this.onFrame = this.onFrame.bind(this);
-	};
+		this.isPlaying = false;
+		this.groundMoney = this.el.find('.groundMoney');
+	//this.IntroSong = this.el.find('.');
+	document.getElementById('Introsong').play();
+	// Cache a bound onFrame since we need it each frame.
+	this.onFrame = this.onFrame.bind(this);
+};
 
 	/**
 	 * Runs every frame. Calculates a delta and allows each game
@@ -34,7 +36,6 @@ window.Game = (function() {
 		if (!this.isPlaying) {
 			return;
 		}
-
 		// Calculate how long since last frame in seconds.
 		var now = +new Date() / 1000,
 		delta = now - this.lastFrame;
@@ -69,7 +70,6 @@ window.Game = (function() {
 		//Only works on clicking on that said element
 		//Need to fix to put for whole game
 		document.getElementById('Losersound').pause();
-		document.getElementById('Introsong').volume = 0.1;
 		document.getElementById('Introsong').currentTime = 0;
 		document.getElementById('Introsong').play();
 		Menu
