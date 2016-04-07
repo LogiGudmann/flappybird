@@ -17,7 +17,7 @@ window.Sign = (function() {
 		this.signs = [el.find('#bigSign1'), el.find('#bigSign2'), el.find('#bigSign3'), el.find('#bigSign4'), el.find('#bigSign5'), el.find('#bigSign6')];
 		this.signPos = new Array();
 		for(var i = 0; i < SIGNS_ON_SCREEN; i++) {
-			this.signPos[i] = { x: 0, y: 0, complete: false};
+			this.signPos[i] = {x: 0, y: 0, complete: false};
 		}
 	};
 
@@ -32,7 +32,6 @@ window.Sign = (function() {
 			this.signPos[i + 1].x = INITIAL_POSITION_X + i * RANDOM_MULTIPLE;
 			this.signPos[i + 1].y = randomNum - SIGN_SPACE;
 			this.signPos[i + 1].complete = false;
-
 		}
 	};
 
@@ -62,26 +61,23 @@ window.Sign = (function() {
 
 	Sign.prototype.checkCollisionWithBounds = function() {
 		for(var i = 0; i < SIGNS_ON_SCREEN; i++) {
-			console.log(this.player.pos.x);
-			if((this.player.pos.x > this.signPos[i].x 
+			if(((this.player.pos.x > this.signPos[i].x || (this.player.pos.x + PLAYER_SIZE) > this.signPos[i].x)
 			&&  this.player.pos.x < this.signPos[i].x + WIDTH 
 			&&  this.player.pos.y > this.signPos[i].y 
-			&&  this.player.pos.y < this.signPos[i].y + HEIGHT) 
-			/*|| ((this.player.pos.x + PLAYER_SIZE) > this.signPos[i].x 
-			&& this.player.pos.x < (this.signPos[i].x + WIDTH) 
-			&& this.player.pos.y > this.signPos[i].y 
-			&& this.player.pos.y < this.signPos[i].y + HEIGHT)*/
-			|| (this.player.pos.x > this.signPos[i].x 
+			&&  this.player.pos.y < this.signPos[i].y + HEIGHT)
+			|| ((this.player.pos.x > this.signPos[i].x || this.player.pos.x + PLAYER_SIZE > this.signPos[i].x)
 			&& this.player.pos.x < (this.signPos[i].x + WIDTH) 
 			&& this.player.pos.y + PLAYER_SIZE > this.signPos[i].y 
-			&& this.player.pos.y + PLAYER_SIZE < this.signPos[i].y + HEIGHT)
-			|| (this.player.pos.x + PLAYER_SIZE > this.signPos[i].x 
-			&& this.player.pos.x < (this.signPos[i].x + WIDTH) 
-			&& this.player.pos.y + PLAYER_SIZE > this.signPos[i].y
 			&& this.player.pos.y + PLAYER_SIZE < this.signPos[i].y + HEIGHT)) {
 				return this.game.gameover();
 			}
+
 			if(!this.signPos[i].complete && this.player.pos.x > this.signPos[i].x) {
+				// Make sure player doesn't fly high and pass the signs
+				if(this.player.pos.y < this.signPos[i].y-HEIGHT)
+				{
+					return this.game.gameover();
+				}
 				console.log("Madeit through");
 				// needs to update score
 				this.signPos[i].complete = true;
@@ -89,7 +85,5 @@ window.Sign = (function() {
 			}
 		}
 	};
-
 	return Sign;
-
 })();
