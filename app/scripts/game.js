@@ -71,6 +71,7 @@ window.Game = (function() {
 		//Only works on clicking on that said element
 		//Need to fix to put for whole game
 		document.getElementById('Losersound').pause();
+		document.getElementById('Introsong').volume = 0.1;
 		document.getElementById('Introsong').currentTime = 0;
 		document.getElementById('Introsong').play();
 		Menu

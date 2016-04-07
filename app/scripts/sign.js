@@ -1,12 +1,12 @@
 window.Sign = (function() {
 	'use strict';
 	var SPEED = 25;
-	var WIDTH = 7;
+	var WIDTH = 6;
 	var HEIGHT = 40;
 	var PLAYER_SIZE = 5;
 	var INITIAL_POSITION_X = 150;
 	var INITIAL_POSITION_Y = 25;
-	var SIGNS_ON_SCREEN = 6
+	var SIGNS_ON_SCREEN = 6;
 	var SIGN_SPACE = 30;
 	var SIGN_FADE_OUT = -10;
 	var RANDOM_MULTIPLE = 20;
@@ -22,7 +22,6 @@ window.Sign = (function() {
 	};
 
 	Sign.prototype.reset = function() {
-
 		for(var i = 0; i < SIGNS_ON_SCREEN; i += 2) {
 			var randomNum = Math.floor(Math.random() * RANDOM_MULTIPLE);
 			this.signPos[i].x = INITIAL_POSITION_X + i * RANDOM_MULTIPLE;
