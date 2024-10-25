@@ -1,9 +1,14 @@
+import $ from 'jquery';
+import { Game } from './game.js';
 
 /**
  * Bootstrap and start the game.
  */
 $(function() {
-    'use strict';
-    var game = new window.Game($('.GameCanvas'));
-    game.start();
+    const game = new Game($('.GameCanvas'));
+    
+    // Start the game on first click or keypress
+    $(document).one('click keypress', function() {
+        game.start();
+    });
 });

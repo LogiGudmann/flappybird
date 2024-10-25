@@ -1,81 +1,52 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!DOCTYPE html>
+<html class="no-js">
 <head>
     <meta charset="utf-8">
     <title>Flappmundur David</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-    <audio class="music"  src="sounds/SimmD.mp3" id="Introsong" preload="auto" loop=""></audio>
-    <audio  src="sounds/Loser.mp3" id="Losersound" preload="auto" ></audio>
-    <audio  src="sounds/flapping.mp3" id="FlappingSound" preload="auto" ></audio>
+    <link rel="stylesheet" href="/styles/main.css">
+    <script type="module" src="/scripts/main.js"></script>
 </head>
 <body>
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-            <![endif]-->
+    <div class="GameCanvas">
+        <div class="Mute" hidden><img class="muteClass" src="/img/mute.png" alt="Mute"></div>
+        <div class="UnMute"><img class="muteClass" src="/img/unmute.png" alt="Unmute"></div>
+        <p class="ScoreCounter"></p>
 
-            <div class="GameCanvas">
-        <div class="Mute" hidden><img class="muteClass" onclick="muteSound();" src="img/mute.png"></div>
-        <div class="UnMute"><img class="muteClass" onclick="muteSound();" src="img/unmute.png"></div>
-                <p class="ScoreCounter"></p>
+        <div class="BjarniCloud"></div>
+        <div class="BjarniCloud2"></div>
 
-              <div class="BjarniCloud"></div>
-              <div class="BjarniCloud2"></div>
+        <div class="Player">
+            <div class="Player-wings"></div>
+        </div>
 
-              <div class="Player">
-                  <div class="Player-wings"> </div>
-              </div>
-
-              <div class="Signs">
-                <div id="bigSign1"></div>
-                <div id="bigSign2"></div>
-                <div id="bigSign3"></div>
-                <div id="bigSign4"></div>
-                <div id="bigSign5"></div>
-                <div id="bigSign6"></div>
-            </div>
-            <div class="groundMoney"></div>
-            <div class="Menu">
-              <p class="WelcomeMessage">Welcome to the exciting trip from Iceland to Panama</p>
-              <p class="Instructions">Press space or click to start the game. Have fun!</p>
-          </div>
-          <div class="Scoreboard">
-              <span class="EndGame">Game over</span>
-              <span class="Score"></span>
-              <span class="HighScore"></span>
-              <button class="Scoreboard-restart">
+        <div class="Signs">
+            <div id="bigSign1"></div>
+            <div id="bigSign2"></div>
+            <div id="bigSign3"></div>
+            <div id="bigSign4"></div>
+            <div id="bigSign5"></div>
+            <div id="bigSign6"></div>
+        </div>
+        <div class="groundMoney"></div>
+        <div class="Menu">
+            <p class="WelcomeMessage">Welcome to the exciting trip from Iceland to Panama</p>
+            <p class="Instructions">Press space or click to start the game. Have fun!</p>
+        </div>
+        <div class="Scoreboard">
+            <span class="EndGame">Game over</span>
+            <span class="Score"></span>
+            <span class="HighScore"></span>
+            <button class="Scoreboard-restart">
                 <span class="Scoreboard-restartText">Restart</span>
             </button>
         </div>
-
     </div>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <script src="scripts/controls.js"></script>
-    <script src="scripts/game.js"></script>
-    <script src="scripts/player.js"></script>
-    <script src="scripts/utils.js"></script>
-    <script src="scripts/sound.js"></script>
-    <script src="scripts/sign.js"></script>
-    <!-- endbuild -->
+    <audio class="music" src="/sounds/SimmD.mp3" id="Introsong" preload="auto" loop></audio>
+    <audio src="/sounds/Loser.mp3" id="Losersound" preload="auto"></audio>
+    <audio src="/sounds/flapping.mp3" id="FlappingSound" preload="auto"></audio>
 </body>
 </html>
